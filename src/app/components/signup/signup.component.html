@@ -1,0 +1,45 @@
+<div class="flex-container">
+  <div class="row">
+    <div class="">
+      <div class="flex-item">
+        <br>
+        
+      <h3> Sign Up </h3>
+      
+      <p *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+      </p>
+      
+        <form (ngSubmit)="signup()">
+          <div class="flex-item">
+            <label for="email-input"> email </label>
+            <input id="email-input" type="email" placeholder="a@b.c" [(ngModel)]="signupInfo.email" name="emailValue">
+          </div>
+
+          <br>
+
+          <div class="flex-item">
+            <label for="username-input"> Username</label>
+            <input id="username-input" type="text" placeholder="blah" [(ngModel)]="signupInfo.username" name="usernameValue">
+          </div>
+
+          <br>
+          
+          <div class="flex-item">
+            <label for="password-input"> Password </label>
+            <input id="password-input" type="password" placeholder="*****" [(ngModel)]="signupInfo.password" name="passwordValue">
+          </div>
+         
+         <br> <br>
+          
+          <button> Sign Up </button>
+          <br><br>
+        </form>
+        <p>Already have account?
+          <a [routerLink]="['/login']">Log In</a>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>

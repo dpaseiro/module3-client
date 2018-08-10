@@ -1,0 +1,65 @@
+{{newGroup2 |json}}
+
+<div class="flex-container">
+  <div class="row">
+    <div class="flex-item">
+      <!-- <div class="marg-form"> -->
+
+        
+        <form (ngSubmit)="groupCreate(myForm)">
+          <label for="name-input"> name </label>
+          <input id="name-input" type="name" placeholder="joe" [(ngModel)]="groupInfo.name" name="nameValue" class="marg-form-outer">
+          <br>
+          
+          <label for="avatar-input"> avatar </label>
+          <input id="avatar-input" type="text" placeholder="img URL" [(ngModel)]="groupInfo.avatar" name="avatarValue" class="marg-form-outer">
+          <br>
+          
+          <label for="description-input"> description </label>
+          <input id="description-input" type="text" placeholder="what is this?" [(ngModel)]="groupInfo.description" name="descriptionValue" class="marg-form-outer">
+          <br>
+          
+          <label for="location-input"> location</label>
+          <input id="location-input" type="text" placeholder="ny" [(ngModel)]="groupInfo.location" name="locationValue" class="marg-form-outer">
+          <br>
+          
+          <label for="topGames-input"> what game </label>
+          
+          <select name="gameTitleValue" [(ngModel)]="groupInfo.gameTitle" class="marg-form-outer">
+            <!-- <option *ngFor= "let game of gamesArray" [ngValue]="game">{{game.gameTitle}}</option> -->
+            <option value="Pota">Pota</option>
+            <option value="200snake">200% Snake</option>
+            <option value="Kittyklicker">Kitty Klicker</option>
+            <option value="spaceDogFight">Space Dog Fighter</option>
+            <option value="georgeVsArepa">George vs Arepa</option>
+            <option value="tactClicks">TactClicks</option>
+            <option value="sageom">SAGEOM</option>
+            <option value="kanyeSnake">Kanye Snake</option>
+            <option value="mazeOrc">Maze Orc</option>
+            <option value="rythmAndTime">Rythm & Time</option>
+            <option value="humansVsOrc">Humans vs Orc</option>
+            <option value="CountryCow">Country Cow</option>
+            <option value="alienInvasion">Alien Invasion</option>
+            <option value="pingPong">Ping Pong</option>
+            <option value="starWarsDoodleJump">Star Wars Doodle Jump</option>
+            <option value="secureTheHenny">Secure the Henny</option>
+          </select>
+          
+          
+          <br>
+          <!-- <div class="flex-butn"> -->
+            
+            <button type="submit" (click)="groupCreate()" class="marg-butn"> create group </button>
+            
+            <button type="submit" [routerLink]="['/profile']"> Cancel </button>
+            <!-- </div> -->
+            
+            <!-- <button type="button" (click)="toggleShow()" (click)="editProfile()"> Edit Profile </button>
+              <button type="button" (click)="toggleShow()"> Cancel </button> -->
+              
+            </form>
+          <!-- </div> -->
+            
+    </div>
+  </div>
+</div>

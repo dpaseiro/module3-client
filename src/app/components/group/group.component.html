@@ -1,0 +1,116 @@
+<div class="flex-container container">
+      <div class="row col--6 row">
+            <div class="margin-top flex-item">
+
+                        <h1>
+                              <b>
+                                 {{theActualGroup.name}}
+                              </b>
+                        </h1>
+                        <hr>
+                        <br><br>
+                        
+                        <div class="white-box centered">
+                              <h5>
+                                    <img class=" avatar-size" src="{{theActualGroup.avatar}}" /> 
+                              </h5>
+                        </div>
+                        
+                        <div class="">
+                              <p class="bold">Author:</p>
+                              {{theActualGroup.username}}
+                        </div>
+                        <br>
+                        
+                        <div>
+                              <p>Location:</p>
+                              {{theActualGroup.location}}
+                        </div>
+                        <br>
+                        
+                        <div class="white-box margin-top-10">
+                              <p>
+                                    Description:  
+                                    <br>
+                                    {{theActualGroup.description}}
+                              </p>
+                        </div>
+
+                        <label for="gameTitle-input"> Title: {{theActualGroup.gameTitle}}</label>          
+
+
+                        <br><br>
+                        
+                        <button class="myButton" (click)="toggleShow()" *ngIf="!shown">edit group info</button>
+                        <button (click)="deleteThisGroup()"  >Delete</button>
+                        
+                  </div>
+            </div>
+      </div>
+
+      <div *ngIf="!shown">
+      
+      <div class="flex-container"> 
+            <div class="row"> 
+                  <div class="flex-item">
+
+                        <button (click)="showComment()" class="marg-butn" *ngIf="!shownComment">
+                              comment
+                        </button>
+                              
+                        <form (ngSubmit)="comment(myForm)" *ngIf="shownComment">
+                                    
+                              <label for="comment-input"> comment</label>
+                              <input id="comment-input" type="text" placeholder="ny" [(ngModel)]="groupInfo.comment" name="commentValue">
+                              <br>
+                              <button type="button" (click)="commentCreate()"> Create Comment </button>
+                              <button type="button" (click)="showComment()"> Cancel </button>
+
+                                    <!-- <button type="button" (click)="toggleShow()" (click)="comments()"> Create Comment </button>
+                                    <button type="button" (click)="toggleShow()"> Cancel </button> -->
+
+                              </form>
+                              <br><br>
+                              <hr>
+                              <p class="bold">Comments:</p>
+                              <p *ngFor="let oneComment of theActualGroup.comments" >
+                                    {{oneComment.author.username}} - {{ oneComment.comment }} 
+                              </p>  
+                              <hr>
+                              
+                              
+                        </div>
+            </div>
+      </div>
+</div>
+
+ <!-- EDIT GROUP / TOGGLE  -->
+ 
+ 
+ <div class="flex-container"> 
+       <div class="row"> 
+             <div class="flex-item">
+                   <form (ngSubmit)="groupEdit(myForm)" *ngIf="shown">
+
+            <label for="name-input"> name </label>
+            <input id="name-input" type="name" placeholder="joe" [(ngModel)]="groupInfo.name" name="nameValue">
+            <br>
+             
+            <label for="location-input"> location</label>
+            <input id="location-input" type="text" placeholder="ny" [(ngModel)]="groupInfo.location" name="locationValue">
+            <br>
+             
+            <label for="avatar-input"> avatar </label>
+            <input id="avatar-input" type="text" placeholder="img URL" [(ngModel)]="groupInfo.avatar" name="avatarValue">
+            <br>
+             
+            <label for="bio-input"> bio </label>
+            <input id="bio-input" type="text" placeholder="tell us about yourself" [(ngModel)]="groupInfo.bio" name="bioValue">
+            <br>
+            
+
+                  </form>
+                                       
+            </div>
+      </div>
+</div>

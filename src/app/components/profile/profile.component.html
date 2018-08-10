@@ -1,0 +1,178 @@
+<!-- PROFILE -->
+<div class="container flex-container">
+  <div class="row col--6 row">
+    <div class="margin-top flex-item">
+      <h1>
+        <b>
+        {{theActualUser.username}}
+      </b>
+      </h1>
+      <hr>
+      
+      <div class="white-box centered avatar-size">
+        <div class="flex-item-avatar sideways-container">
+          <div class="flex-col">
+            
+            <img class=" avatar-size" src="{{theActualUser.avatar}}" /> 
+
+                <br>
+                <p class="bold">Name: {{theActualUser.name}}</p>
+                <br>
+
+                <div>
+                  
+                  <p>
+                    Location:
+                    {{theActualUser.location}}
+                  </p>
+                  <br>
+                  
+                    <p>
+                      Bio:  
+                      {{theActualUser.bio}}
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+          </div>
+              
+          <br><br>
+
+              <p class="bold">Favorite Games:</p>
+              {{theActualUser.topGames}}
+              
+<br><br><br>
+
+  <a [routerLink]="['/profile', theActualUser._id, 'update']" class="myButton" (click)="toggleShow()" *ngIf="!shown">edit user info</a>
+
+    <form (ngSubmit)="editProfile(myForm)" *ngIf="shown">
+    <label for="name-input"> name </label>
+    <input id="name-input" type="name" placeholder="joe" [(ngModel)]="profileInfo.name" name="nameValue">
+    <br>
+
+    <label for="avatar-input"> avatar </label>
+    <input id="avatar-input" type="text" placeholder="img URL" [(ngModel)]="profileInfo.avatar" name="avatarValue">
+    <br>
+  
+    <label for="location-input"> location</label>
+    <input id="location-input" type="text" placeholder="ny" [(ngModel)]="profileInfo.location" name="locationValue">
+    <br>
+
+    <label for="bio-input"> bio </label>
+    <input id="bio-input" type="textarea" placeholder="tell us about yourself" [(ngModel)]="profileInfo.bio" name="bioValue">
+    <br>
+
+    <label for="topGames-input"> favorite games </label>
+    <div>
+      <input type="checkbox" id="Pota" name="gameTitle"
+      value="pota" [(ngModel)]="profileInfo[' Pota']" />
+      <label for="pota">Pota</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="200% Snake" name="gameTitle"
+      value="200snake" [(ngModel)]="profileInfo[' 200% Snake']" />
+      <label for="200snake">200% Snake</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="Kitty Klicker" name="gameTitle"
+      value="kittyklicker" [(ngModel)]="profileInfo[' Kitty Klicker']" />
+      <label for="kittyklicker">Kitty Klicker</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Space DogFight" name="gameTitle"
+      value="spaceDogFight"[(ngModel)]="profileInfo[' Space Dogfight']" />
+      <label for="spaceDogFight">Space Dogfight</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="George vs Arepa" name="gameTitle"
+      value="georgeVsArepa" [(ngModel)]="profileInfo[' George vs Arepa']" />
+      <label for="georgeVsArepa">George vs. Arepa</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="TactClicks" name="gameTitle"
+      value="tactClicks"[(ngModel)]="profileInfo[' TactClicks']"  />
+      <label for="tactClicks">TactClicks</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="SAGEOM" name="gameTitle"
+      value="sageom"[(ngModel)]="profileInfo[' SAGEOM']" />
+      <label for="sageom">SAGEOM</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Kanye Snake" name="gameTitle"
+      value="kanyeSnake"[(ngModel)]="profileInfo[' Kanye Snake']" />
+      <label for="kanyeSnake">Kanye Snake</label>
+              </div>
+
+    <div>
+      <input type="checkbox" id="Maze Orc" name="gameTitle"
+      value="mazeOrc" [(ngModel)]="profileInfo[' Maze Orc']" />
+      <label for="mazeOrc">Maze Orc</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Rythm & Time" name="gameTitle"
+      value="rythmAndTime" [(ngModel)]="profileInfo[' Rythm & Time']" />
+      <label for="rythmAndTime">Rhytm & Time</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Humans vs Orc" name="gameTitle"
+      value="humansVsOrc" [(ngModel)]="profileInfo[' Humans vs Orc']" />
+      <label for="humansVsOrc">Human vs. Orc</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Country Cow" name="gameTitle"
+      value="CountryCow" [(ngModel)]="profileInfo[' Country Cow']" />
+      <label for="CountryCow">Country Cow</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Alien Invasion" name="gameTitle"
+      value="alienInvasion" [(ngModel)]="profileInfo[' Alien Invasion']" />
+      <label for="alienInvasion">Alien Invasion</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Ping Pong" name="gameTitle"
+      value="pingPong" [(ngModel)]="profileInfo[' Ping Pong']" />
+      <label for="pingPong">Ping Pong</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Star Wars Doodle Jump" name="gameTitle"
+      value="starWarsDoodleJump" [(ngModel)]="profileInfo[' Star Wars Doodle Jump']" />
+      <label for="starWarsDoodleJump">Star Wars Doodle Jump</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="Secure the Henny" name="gameTitle"
+      value="secureTheHenny" [(ngModel)]="profileInfo[' Secure the Henny']" />
+      <label for="secureTheHenny">Secure the Henny</label>
+    </div>
+    
+    <br>
+    
+    <button type="button" (click)="toggleShow()" (click)="editProfile()"> Edit Profile </button>
+    <button type="button" (click)="toggleShow()"> Cancel </button>
+  </form>
+
+
+  <!-- CREATE GROUP -->
+  <a [routerLink]="['/new-group']" class="myButton" (click)="toggleShow()" *ngIf="!shown">create group info</a>
+
+  
+
+  
+</div>
+</div>
+</div>

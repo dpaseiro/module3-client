@@ -1,0 +1,62 @@
+<p>
+    new-event works!
+  </p>
+  
+    <!-- CREATE EVENT -->
+    <!-- <a [routerLink]="['/event', 'update']" class="myButton" (click)="toggleShow()" *ngIf="!shown">create event info</a> -->
+  
+    <form (ngSubmit)="eventCreate(myForm)">
+        <label for="name-input"> name </label>
+        <input id="name-input" type="text" placeholder="joe" [(ngModel)]="eventInfo.name" name="nameValue">
+        <br>
+
+        <label for="avatar-input"> avatar </label>
+        <input id="avatar-input" type="text" placeholder="img URL" [(ngModel)]="eventInfo.avatar" name="avatarValue">
+        <br>
+
+        <label for="description-input"> description </label>
+        <input id="description-input" type="text" placeholder="what is this event" [(ngModel)]="eventInfo.description" name="descriptionValue">
+        <br>
+        
+        <label for="location-input"> location</label>
+        <input id="location-input" type="text" placeholder="ny" [(ngModel)]="eventInfo.location" name="locationValue">
+        <br>
+  
+        <label for="date-input"> date </label>
+        <input id="date-input" type="text" placeholder="date" [(ngModel)]="eventInfo.date" name="dateValue">
+        <br>
+
+        <select>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Maybe">Maybe</option>
+        </select>
+
+        <br>
+  
+        <label for="gameTitle-input"> title </label>
+  
+<select name="gameTitleValue" [(ngModel)]="groupInfo.gameTitle">
+            <!-- <option *ngFor= "let game of gamesArray" [ngValue]="game">{{game.gameTitle}}</option> -->
+  <option value="Pota">Pota</option>
+  <option value="200snake">200% Snake</option>
+  <option value="Kittyklicker">Kitty Klicker</option>
+  <option value="spaceDogFight">Space Dog Fighter</option>
+  <option value="georgeVsArepa">George vs Arepa</option>
+  <option value="tactClicks">TactClicks</option>
+  <option value="sageom">SAGEOM</option>
+  <option value="kanyeSnake">Kanye Snake</option>
+  <option value="mazeOrc">Maze Orc</option>
+  <option value="rythmAndTime">Rythm & Time</option>
+  <option value="humansVsOrc">Humans vs Orc</option>
+  <option value="CountryCow">Country Cow</option>
+  <option value="alienInvasion">Alien Invasion</option>
+  <option value="pingPong">Ping Pong</option>
+  <option value="starWarsDoodleJump">Star Wars Doodle Jump</option>
+  <option value="secureTheHenny">Secure the Henny</option>
+</select>
+<br>
+<button type="submit" (click)="groupCreate()"> create group </button>
+<button type="submit"> Cancel </button>
+  
+        </form>

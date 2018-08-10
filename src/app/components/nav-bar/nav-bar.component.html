@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="topnav navbar sticky-top navbar-dark bg-dark">
+
+     <a class="active" href="/">
+     <div class="white-box">
+      <img class="nav-logo" src="../images/video.png" alt="commin-logo">
+     </div>
+     </a>
+
+     <form (ngSubmit)="search()">
+      <label for="search-input"></label>
+      <input [(ngModel)]="searchInfo" id="search-input" type="text" placeholder="Search..." name="searchTerm">
+      <button type="submit">Search</button>
+    </form>
+
+    <a class="font-color font-a" href="/logout">log out</a>
+
+    <!-- <div *ngIf="User.username" class="log-info"> -->
+      <!-- <h6>Logged in as</h6><h5>{{User.username}} </h5>  -->
+      <!-- <button (click)="logMeOut()">Log Out </button> -->
+      <!-- <p *ngIf="logoutError"> -->
+      <!-- {{ logoutError }} -->
+      <!-- </p> -->
+    <!-- </div>  -->
+
+    </div>
+
+
+    <script src='/javascripts/script.js'></script>
+  </body>
+</html>
